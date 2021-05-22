@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d7b7ce1508.js" crossorigin="anonymous"></script>
+        
+    <link rel="stylesheet" href="css/styles.css"/>
+    <title>TODO</title>
+</head>
+<body>
+    <div class="box" id="heading">
+        <h2><%=someday %></h2>
+    </div>
+    <div class="box">
+        <% var todoList =todos %>
+        
+            <% for(var i = 0; i < todoList.length;i++) { %>
+                <form action="/delete" method="post">
+                
+                    <div class="item">
+                        <input type="checkbox" onChange="this.form.submit()" name="checked" value="<%=todoList[i]._id%>">
+                        <p><%=todoList[i].name%></p>
+                    </div>
+                
+                </form>
+                
+                
+                
+                <% } %>
+        <form action= <%=route %> method="post">
+            <input type="text" name="tod" placeholder="Add a new item" autocomplete="off">
+                    
+            <button type="submit" name="button" value="homeroute">+</button>
+        </form>
+        
+    
+        
+    </div>
+    <footer style="margin-top:692px" >
+        <p id="copy"><a href="https://www.youtube.com/saikiranpatro" textdecoration="none" target="_blank" style="color:#E4E9FD"><i class="fab fa-youtube"></i></a> <i class="fas fa-copyright"></i> 2021 The todo</p>
+        <p id="copy">Version 1.1</p>
+    
+    </footer>
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
